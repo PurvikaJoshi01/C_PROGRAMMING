@@ -1,0 +1,59 @@
+#include<stdio.h>
+ static int n,s=1,in=0,out=0,count=0;
+    char buffer[10],buff[10];
+    int ele;
+    
+void produce(){
+    if(s==1){
+               s=0;
+               printf("enter element in buffer");
+               scanf("%d",&ele);
+               buffer[in]=ele;
+               in=(in+1)%10;
+               s=1;
+               count=+1;
+               
+           }
+           else{
+              printf("hii");
+           }
+           
+}
+void consume(){
+    if(s==1){
+                s=0;
+            }
+            else{
+                buff[out]=ele;
+                ele==NULL;
+                out=(out+1)%10;
+                s=1;
+                count=-1;
+            }
+}
+void display(){
+    for(int i=0;i<in;i++){
+        printf("%d\n",buffer[i]);
+    }
+}
+void main(){
+    while(1){
+    printf("press 1 to produce and press 2 to consume and press 3 to display buffer");
+    printf("\nenter choice-");
+    scanf("%d",&n);
+    switch(n){
+        case 1:
+           produce();
+            break;
+        case 2:
+            consume();
+            break;
+        case 3:
+            display();
+            break;
+        default:
+            printf("wrong choice");
+    }
+    }
+    
+}
